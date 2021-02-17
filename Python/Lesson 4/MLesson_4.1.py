@@ -2,13 +2,10 @@
 # В расчете необходимо использовать формулу: (выработка в часах * ставка в час) + премия.
 # Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
 
-import sys
+from sys import argv
 
 def salary():
-    try:
-        time, rate, bonus = map(float, sys.argv[1:])
-        print(f'Зарплата: {time * rate + bonus}')
-    except ValueError:
-        print('Не корректно введены значения!')
+    name, working_out, rate, bonus = argv
+    print(f'Salary: {int(working_out) * int(rate) + int(bonus)}')
 
 salary()

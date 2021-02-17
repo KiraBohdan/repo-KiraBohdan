@@ -5,8 +5,8 @@
 
 from functools import reduce
 
-def my_list(el_1, el_2):
+def my_func(el_1, el_2):
     return el_1 * el_2
 
-uniq_list = [el for el in range(100, 1001, 2)]
-print(f'Список {uniq_list}\nПеремноженные числа {reduce(my_list, uniq_list)}')
+new_list = [el for el in range(100, 1001, 2)]
+print(f'New list: {new_list}\nMultiplication of numbers: {reduce(my_func, new_list)}')

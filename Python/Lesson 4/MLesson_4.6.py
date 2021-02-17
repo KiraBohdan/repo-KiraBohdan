@@ -9,20 +9,30 @@
 
 from itertools import count, cycle
 
-print('Для генерации числа нажмите "ENTER"\nДля выхода нажмите "Q"')
+def gen_num():
+    print('To star the program "Generation of numbers" press "ENTER"\n')
 
-for i in count(int(input('Введите начальное число: '))):
-    print(i, end='')
-    stop = input('---> ')
-    if stop == 'Q':
-        break
+    for i in count(int(input('Enter the number: '))):
+        print(f'Next number {i}\n')
+        stop = input('For continue press "ENTER"\nFor exit press "Q"\n---> ... ')
+        if stop == 'Q' or stop == 'q':
+            print('\nThe program was stopped.\n')
+            break
 
-print('Для генерации числа нажмите "ENTER"\nДля выхода нажмите "Q"')
+def gen_list():
+    print('To star the program "Generation of list" press "ENTER"\n')
+    stop = input('For continue press "ENTER"\nFor exit press "Q"\n---> ... ')
+    if stop == 'Q' or stop == 'q':
+        return print('\nThe program was stopped.\n')
+    else:
+        new_list = input('Enter the elements of the new list separated by a space: ').split()
+        i = 0
+        for el in cycle(new_list):
+            if i <= 10:
+                print(el)
+                i += 1
+            else:
+                break
 
-new_list = input('Введите список из элементов через пробел: ').split()
-result = cycle(new_list)
-# stop = None
-
-while stop != 'Q':
-    print(next(result), end='')
-    stop = input('---> ')
+gen_num()
+gen_list()

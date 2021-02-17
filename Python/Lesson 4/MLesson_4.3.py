@@ -2,4 +2,4 @@
 # Необходимо решить задание в одну строку.
 # Подсказка: использовать функцию range() и генератор.
 
-print([el for el in range(20, 241) if el % 20 == 0 or el % 21 == 0])
+print(f'Multiples 20 or 21: {[el for el in range(20, 240) if el % 20 == 0 or el % 21 == 0]}')
